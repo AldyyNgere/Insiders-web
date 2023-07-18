@@ -1,0 +1,225 @@
+:root{
+  --primary: #33d9b2;
+  --primary-bright: #ebfbf7;
+  --primary-dark: #051612;
+  --primary-hover: #29ae8e;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+}
+
+html{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body{
+  font-size: 1.563rem;
+  font-family: 'DM Sans';
+  line-height: 1.75;
+}
+
+button{
+  cursor: pointer;
+  transition: .2s;
+}
+
+/* Header  */
+
+header{
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1584968193683-03f65a63e242?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODk2NjE1MDF8&ixlib=rb-4.0.3&q=85');
+  background-size: cover;
+  background-position:  center;
+  background-repeat: no-repeat;
+  padding: 0 1rem;
+  padding-top: 0.8rem;
+}
+
+.navbar{
+   display: flex;
+   justify-content: space-between;
+  align-items: center;
+   background-color: red;
+   height: 7rem;
+  padding: 0 4%;  
+   backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    position: fixed;
+    top: 1.5%;
+    left: 1%;
+    right: 1%;
+    z-index: 9999;
+}
+
+.brand .logo{
+  color: var(--primary);
+  font-size: 2.441rem;
+  font-weight: 600;
+  letter-spacing: -0.1rem;
+}
+
+.navbar-menu a{
+  display: inline-block;
+  margin-right: 3rem;
+  color: var(--primary-bright);
+  transition: .2s;
+}
+
+.navbar-menu .contact-btn{
+  display: none;
+  padding: 1.2rem 2.4rem;
+  font-family: inherit;
+  border-radius: 3rem;
+  background: var(--primary);
+  font-weight: 600;
+  font-size: 1.563rem;
+  color: var(--primary-dak);
+  transition: .2s;
+}
+
+.navbar-menu .contact-btn:hover{
+  background: var(--primary-hover);
+}
+
+.navbar-menu a:hover{
+  color: var(--primary-hover);
+}
+
+.navbar-btns-box{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-btns-box .contact-btn{
+  padding: 1.2rem 2.4rem;
+  font-family: inherit;
+  border-radius: 3rem;
+  background: var(--primary);
+  font-weight: 600;
+  font-size: 1.563rem;
+  color: var(--primary-dak);
+  transition: .2s;
+}
+
+.navbar-btns-box .contact-btn:hover{
+  background: var(--primary-hover);
+}
+
+.navbar-btns-box button{
+  background: none;
+}
+
+.navbar-btns-box button ion-icon{
+  padding: 0.9rem;
+  font-size: 2.441rem;
+  background: var(--primary);
+  border-radius: 50%;
+  color: var(--primary-dark) ;
+  transition: .2s;
+}
+
+.navbar-btns-box button ion-icon:hover{
+  background-color: var(--primary-hover);
+}
+
+#menu-btn,
+#close-btn{
+  display: none;
+}
+
+/* *************** */
+/* MEDIA QUERIES  */
+/* ************* */
+
+/* iPads (portrait) ----------- */
+@media only screen and (max-width : 1024px) {...}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (max-width : 768px) {
+  
+  .navbar{
+/*     background: red; */
+  }
+  
+  .navbar-menu{
+    position: absolute;
+    top: 113%;
+    width: 25rem;
+    height: 84vh;
+    right: -100%;
+    display: flex;
+    align-items: center;
+    padding: 3rem;
+    padding-left: 5rem;
+    gap: 3rem;
+    flex-direction: column;
+       backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    transition: .4s;
+  }
+  
+  .navbar-menu.sidebar{
+    right: -0.2%;
+  }
+  
+  .navbar-menu a{
+    font-weight: 600;
+  }
+  
+  #menu-btn{
+    display: inline-block;
+  }
+  
+  #menu-btn.sidebar{
+    display: none;
+  }
+  
+  #close-btn.sidebar{
+    display: inline-block;
+  }
+  
+}
+
+/* Big smartphones (portrait) (ie: Galaxy 3 has 360)*/
+@media only screen and (max-width : 640px) {
+  html{
+    font-size: 60%;
+  }
+}
+
+/* Smartphones (portrait) (ie: Galaxy 1) */
+@media only screen and (max-width : 321px) {
+  
+  html{
+    font-size: 59.5%;
+  }
+  
+  .navbar-menu{
+    width: 100%;
+  }
+  
+  .navbar-btns-box .contact-btn{
+    display: none;
+  }
+  
+  .navbar-menu .contact-btn{
+    display: inline-block;
+    margin-left: -2rem;
+  }
+  
+}
